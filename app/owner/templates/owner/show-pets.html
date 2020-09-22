@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Pets
+{% endblock %}
+{% block add_nav %}
+    <div><a href="{{ url_for('owner.register_pet', owner_id=owner_id) }}" style="color: yellowgreen">Register Pet</a>
+    </div>
+{% endblock %}
+{% block main %}
+    {% for pet in pets %}
+        <div><a href="{{ url_for('owner.chosen_type', animal_type=pet['animal_type']) }}">{{ pet }}</a></div>
+        <button><a href="{{ url_for('owner.del_pet', owner_id=owner_id, pet_id=pet['id'])}}">DELETE</a></button>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

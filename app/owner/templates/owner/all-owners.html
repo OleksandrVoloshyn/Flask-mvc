@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    All Owners
+{% endblock %}
+{% block main %}
+    {% for owner in owners %}
+        <div>
+            <a href="{{ url_for('owner.show_owner_pets', owner_id=owner['id']) }}">
+                <div>{{ owner }}</div>
+            </a>
+            <button><a href="{{ url_for('owner.delete_owner', owner_id=owner['id']) }}">DELETE</a></button>
+            <hr>
+        </div>
+    {% endfor %}
+
+{% endblock %}

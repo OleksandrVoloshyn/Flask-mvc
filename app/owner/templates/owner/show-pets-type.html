@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+    Animal Type
+{% endblock %}
+{% block main %}
+    {% for pet in pets %}
+        {{ pet }}
+        <hr>
+    {% endfor %}
+{% endblock %}
