@@ -6,8 +6,9 @@ class MoveDB:
         db.session.add(self)
         db.session.commit()
 
-    def del_from_db(self):
-        db.session.delete(self)
+    @classmethod
+    def del_from_db(cls, del_obj):
+        db.session.delete(del_obj)
         db.session.commit()
 
 
